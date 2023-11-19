@@ -1,16 +1,17 @@
 <?php
-    include '../lib/session.php';
-    Session::checkSession(); //khi chua Login, access vào index.php auto ve Login page
+include '../lib/session.php';
+Session::checkSession(); //khi chua Login, access vào index.php auto ve Login page
 ?>
 
 <?php
-  header("Cache-Control: no-cache, must-revalidate");
-  header("Pragma: no-cache"); 
-  header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); 
-  header("Cache-Control: max-age=2592000");
+header("Cache-Control: no-cache, must-revalidate");
+header("Pragma: no-cache");
+header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
+header("Cache-Control: max-age=2592000");
 ?>
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <title>Admin</title>
@@ -33,37 +34,38 @@
     <!-- END: load jquery -->
     <script type="text/javascript" src="js/table/table.js"></script>
     <script src="js/setup.js" type="text/javascript"></script>
-	 <script type="text/javascript">
-        $(document).ready(function () {
+    <script type="text/javascript">
+        $(document).ready(function() {
             setupLeftMenu();
-		    setSidebarHeight();
+            setSidebarHeight();
         });
     </script>
 
 </head>
+
 <body>
     <div class="container_12">
         <div class="grid_12 header-repeat">
             <div id="branding">
                 <div class="floatleft logo">
                     <img src="img/livelogo.png" alt="Logo" />
-				</div>
-				<div class="floatleft middle">
-					<h1>Tourism and Travel Management</h1>
-					<p>www.group5.com</p>
-				</div>
+                </div>
+                <div class="floatleft middle">
+                    <h1>Tourism and Travel Management</h1>
+                    <p>www.group5.com</p>
+                </div>
                 <div class="floatright">
                     <div class="floatleft">
-                        <img src="img/img-profile.jpg" alt="Profile Pic" /></div>
+                        <img src="img/img-profile.jpg" alt="Profile Pic" />
+                    </div>
                     <div class="floatleft marginleft10">
                         <ul class="inline-ul floatleft">
-                            <li>Hello <?php echo Session::get('adminName')?></li>
+                            <li>Hello <?php echo Session::get('adminName') ?></li>
 
                             <?php
-                                if(isset($_GET['action']) && $_GET['action'] == 'logout')
-                                {
-                                    Session::destroy();
-                                }
+                            if (isset($_GET['action']) && $_GET['action'] == 'logout') {
+                                Session::destroy();
+                            }
                             ?>
 
                             <li><a href="?action=logout">Logout</a></li>
@@ -80,11 +82,10 @@
             <ul class="nav main">
                 <li class="ic-dashboard"><a href="index.php"><span>Dashboard</span></a> </li>
                 <li class="ic-form-style"><a href=""><span>User Profile</span></a></li>
-				<li class="ic-typography"><a href="changepassword.php"><span>Change Password</span></a></li>
-				<li class="ic-grid-tables"><a href="inbox.php"><span>Inbox</span></a></li>
+                <li class="ic-typography"><a href="changepassword.php"><span>Change Password</span></a></li>
+                <li class="ic-grid-tables"><a href="inbox.php"><span>Inbox</span></a></li>
                 <li class="ic-charts"><a href=""><span>Visit Website</span></a></li>
             </ul>
         </div>
         <div class="clear">
         </div>
-    
