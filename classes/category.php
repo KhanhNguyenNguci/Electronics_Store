@@ -24,7 +24,7 @@
             }
             else
             {
-                $query = "INSERT INTO tbl_category(catName) VALUES('$catName')"; //CONNECT DB
+                $query = "INSERT INTO tbl_category(catname) VALUES('$catName')"; //CONNECT DB
                 $result = $this->db->insert($query); //Process DB
                 if($result)
                 {
@@ -40,14 +40,14 @@
         }
         public function show_category()
         {
-            $query = "SELECT * FROM tbl_category order by catId desc"; //CONNECT DB
+            $query = "SELECT * FROM tbl_category order by catid desc"; //CONNECT DB
             $result = $this->db->select($query); //Process DB
             return $result;
         }
         public function update_category($catName, $id){
             $catName = $this->fm->validation($catName); //check valid value
-            $catName = mysqli_real_escape_string($this->db->link, $catName); //connect DB
-            $id = mysqli_real_escape_string($this->db->link, $id); //connect DB
+            $catName = pg_escape_string($this->db->link, $catName); //connect DB
+            $id = pg_escape_string($this->db->link, $id); //connect DB
 
             if(empty($catName))
             {
@@ -56,7 +56,7 @@
             }
             else
             {
-                $query = "UPDATE tbl_category SET catName = '$catName' WHERE catId = '$id'"; //CONNECT DB
+                $query = "UPDATE tbl_category SET catname = '$catName' WHERE catid = '$id'"; //CONNECT DB
                 $result = $this->db->update($query); //Process DB
                 if($result)
                 {
@@ -71,7 +71,7 @@
             }
         }
         public function del_category($id){
-            $query = "DELETE FROM tbl_category where catId = '$id' "; //CONNECT DB
+            $query = "DELETE FROM tbl_category where catid = '$id' "; //CONNECT DB
             $result = $this->db->delete($query); //Process DB
             if($result)
             {

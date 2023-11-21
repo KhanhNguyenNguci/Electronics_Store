@@ -49,8 +49,8 @@
                     <img src="img/livelogo.png" alt="Logo" />
 				</div>
 				<div class="floatleft middle">
-					<h1>Tourism and Travel Management</h1>
-					<p>www.group5.com</p>
+					<h1>Electronics Store Management</h1>
+					<p>www.group12.com</p>
 				</div>
                 <div class="floatright">
                     <div class="floatleft">

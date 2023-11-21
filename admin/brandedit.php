@@ -30,14 +30,14 @@
                 <?php
                     $get_brand_name = $brand->getbrandbyId($id);
                     if($get_brand_name){
-                        while($result = $get_brand_name->fetch_assoc()){
+                        while($result = pg_fetch_assoc($get_brand_name)){
                     
                 ?>
                  <form action="" method="post">
                     <table class="form">					
                         <tr>
                             <td>
-                                <input type="text" value="<?php echo $result['brandName'] ?>" name="brandName" placeholder="Sửa thương hiệu sản phẩm..." class="medium" />
+                                <input type="text" value="<?php echo $result['brandname'] ?>" name="brandName" placeholder="Sửa thương hiệu sản phẩm..." class="medium" />
                             </td>
                         </tr>
 						<tr> 

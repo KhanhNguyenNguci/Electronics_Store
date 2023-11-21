@@ -15,7 +15,7 @@
         public function insert_brand($brandName)
         {
             $brandName = $this->fm->validation($brandName); //check valid value
-            $brandName = mysqli_real_escape_string($this->db->link, $brandName); //connect DB
+            $brandName = pg_escape_string($this->db->link, $brandName); //connect DB
 
             if(empty($brandName))
             {
@@ -24,7 +24,7 @@
             }
             else
             {
-                $query = "INSERT INTO tbl_brand(brandName) VALUES('$brandName')"; //CONNECT DB
+                $query = "INSERT INTO tbl_brand(brandname) VALUES('$brandName')"; //CONNECT DB
                 $result = $this->db->insert($query); //Process DB
                 if($result)
                 {
@@ -40,7 +40,7 @@
         }
         public function show_brand()
         {
-            $query = "SELECT * FROM tbl_brand order by brandId desc"; //CONNECT DB
+            $query = "SELECT * FROM tbl_brand order by brandid desc"; //CONNECT DB
             $result = $this->db->select($query); //Process DB
             return $result;
         }
@@ -51,8 +51,8 @@
         }
         public function update_brand($brandName, $id){
             $brandName = $this->fm->validation($brandName); //check valid value
-            $brandName = mysqli_real_escape_string($this->db->link, $brandName); //connect DB
-            $id = mysqli_real_escape_string($this->db->link, $id); //connect DB
+            $brandName = pg_escape_string($this->db->link, $brandName); //connect DB
+            $id = pg_escape_string($this->db->link, $id); //connect DB
 
             if(empty($brandName))
             {
@@ -61,7 +61,7 @@
             }
             else
             {
-                $query = "UPDATE tbl_brand SET brandName = '$brandName' WHERE brandId = '$id'"; //CONNECT DB
+                $query = "UPDATE tbl_brand SET brandname = '$brandName' WHERE brandid = '$id'"; //CONNECT DB
                 $result = $this->db->update($query); //Process DB
                 if($result)
                 {
@@ -76,7 +76,7 @@
             }
         }
         public function del_brand($id){
-            $query = "DELETE FROM tbl_brand where brandId = '$id' "; //CONNECT DB
+            $query = "DELETE FROM tbl_brand where brandid = '$id' "; //CONNECT DB
             $result = $this->db->delete($query); //Process DB
             if($result)
             {

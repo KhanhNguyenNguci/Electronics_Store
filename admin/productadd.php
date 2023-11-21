@@ -44,9 +44,9 @@
                             $cat = new category();
                             $catlist = $cat->show_category();
                             if($catlist){
-                                while($result = $catlist->fetch_assoc()){
+                                while($result = pg_fetch_assoc($catlist)){
                             ?>
-                            <option value="<?php echo $result['catId']?>"> <?php echo $result['catName']?></option>
+                            <option value="<?php echo $result['catid']?>"> <?php echo $result['catname']?></option>
                             <?php
                                 }
                             }   
@@ -66,9 +66,9 @@
                             $brand = new brand();
                             $brandlist = $brand->show_brand();
                             if($brandlist){
-                                while($result = $brandlist->fetch_assoc()){
+                                while($result = pg_fetch_assoc($brandlist)){
                             ?>
-                            <option value="<?php echo $result['brandId']?>"> <?php echo $result['brandName']?></option>
+                            <option value="<?php echo $result['brandid']?>"> <?php echo $result['brandname']?></option>
                             <?php
                                 }
                             }   

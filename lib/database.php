@@ -47,19 +47,24 @@ public function select($query) {
 
 // Insert data
 public function insert($query){
-   $insert_row = $this->link->query($query) or 
-     die($this->link->error.__LINE__);
+   $insert_row = pg_query($this->link, $query);
+   if (!$insert_row) {
+    die(pg_last_error($this->link) . " at line " . __LINE__);
+   }
    if($insert_row){
      return $insert_row;
    } else {
      return false;
-    }
+   }
  }
+
   
 // Update data
  public function update($query){
-   $update_row = $this->link->query($query) or 
-     die($this->link->error.__LINE__);
+   $update_row = pg_query($this->link, $query);
+   if (!$update_row) {
+    die(pg_last_error($this->link) . " at line " . __LINE__);
+   }
    if($update_row){
     return $update_row;
    } else {
@@ -69,8 +74,10 @@ public function insert($query){
   
 // Delete data
  public function delete($query){
-   $delete_row = $this->link->query($query) or 
-     die($this->link->error.__LINE__);
+   $delete_row = pg_query($this->link, $query);
+   if (!$delete_row) {
+    die(pg_last_error($this->link) . " at line " . __LINE__);
+   }
    if($delete_row){
      return $delete_row;
    } else {

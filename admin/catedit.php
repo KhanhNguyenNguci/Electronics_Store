@@ -31,14 +31,14 @@
                 <?php
                     $get_cate_name = $cat->getcatbyId($id);
                     if($get_cate_name){
-                        while($result = $get_cate_name->fetch_assoc()){
+                        while($result = pg_fetch_assoc($get_cate_name)){
                     
                 ?>
                  <form action="" method="post">
                     <table class="form">					
                         <tr>
                             <td>
-                                <input type="text" value="<?php echo $result['catName'] ?>" name="catName" placeholder="Sửa danh mục điểm du lịch..." class="medium" />
+                                <input type="text" value="<?php echo $result['catname'] ?>" name="catName" placeholder="Sửa danh mục điểm du lịch..." class="medium" />
                             </td>
                         </tr>
 						<tr> 
