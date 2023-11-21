@@ -43,16 +43,16 @@
 				$pdlist = $pd->show_product();
 				if($pdlist){
 					$i = 0;
-					while($result = $pdlist->fetch_assoc()){
+					while($result = pg_fetch_assoc($pdlist)){
 						$i++;
 				?>
 				<tr class="odd gradeX">
 					<td><?php echo $i ?></td>
-					<td><?php echo $result['productName']?></td>
+					<td><?php echo $result['productname']?></td>
 					<td><?php echo $result['price']?></td>
 					<td><image src ="uploads/<?php echo $result['image']?>" width="80"> </td>
-					<td><?php echo $result['catName']?></td>
-					<td><?php echo $result['brandName']?></td>
+					<td><?php echo $result['catname']?></td>
+					<td><?php echo $result['brandname']?></td>
 					<td><?php echo $fm->textShorten($result['product_desc'], 50)?></td>
 					<td><?php
 						if($result['type'] != 0)
@@ -63,7 +63,7 @@
 						}
 						?>
 					</td>
-					<td><a href="productedit.php?productid=<?php echo $result['productId'] ?>">Edit</a> || <a href="?productid=<?php echo $result['productId'] ?>">Delete</a></td>
+					<td><a href="productedit.php?productid=<?php echo $result['productid'] ?>">Edit</a> || <a href="?productid=<?php echo $result['productid'] ?>">Delete</a></td>
 				</tr>
 				<?php
 					}

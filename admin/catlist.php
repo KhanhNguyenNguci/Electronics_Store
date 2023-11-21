@@ -32,14 +32,14 @@
 						$show_cate = $cat->show_category();
 						if($show_cate){
 							$i = 0;
-							while($result = $show_cate->fetch_assoc()){
+							while($result = pg_fetch_assoc($show_cate)){
 								$i++;
 					
 					?>
 						<tr class="odd gradeX">
 							<td><?php echo $i; ?></td>
-							<td><?php echo $result['catName'] ?></td>
-							<td><a href="catedit.php?catid=<?php echo $result['catId'] ?>">Edit</a> || <a onclick="return confirm('Are you want to delete?')" href="?delid=<?php echo $result['catId'] ?>">Delete</a></td>
+							<td><?php echo $result['catname'] ?></td>
+							<td><a href="catedit.php?catid=<?php echo $result['catid'] ?>">Edit</a> || <a onclick="return confirm('Are you want to delete?')" href="?delid=<?php echo $result['catid'] ?>">Delete</a></td>
 						</tr>
 						
 						<?php

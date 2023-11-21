@@ -49,11 +49,11 @@ header("Cache-Control: max-age=2592000");
             <div id="branding">
                 <div class="floatleft logo">
                     <img src="img/livelogo.png" alt="Logo" />
-                </div>
-                <div class="floatleft middle">
-                    <h1>Tourism and Travel Management</h1>
-                    <p>www.group5.com</p>
-                </div>
+				</div>
+				<div class="floatleft middle">
+					<h1>Electronics Store Management</h1>
+					<p>www.group12.com</p>
+				</div>
                 <div class="floatright">
                     <div class="floatleft">
                         <img src="img/img-profile.jpg" alt="Profile Pic" />

@@ -32,14 +32,14 @@
 						$show_brand = $brand->show_brand();
 						if($show_brand){
 							$i = 0;
-							while($result = $show_brand->fetch_assoc()){
+							while($result = pg_fetch_assoc($show_brand)){
 								$i++;
 					
 					?>
 						<tr class="odd gradeX">
 							<td><?php echo $i; ?></td>
-							<td><?php echo $result['brandName'] ?></td>
-							<td><a href="brandedit.php?brandid=<?php echo $result['brandId'] ?>">Edit</a> || <a onclick="return confirm('Are you want to delete?')" href="?delid=<?php echo $result['brandId'] ?>">Delete</a></td>
+							<td><?php echo $result['brandname'] ?></td>
+							<td><a href="brandedit.php?brandid=<?php echo $result['brandid'] ?>">Edit</a> || <a onclick="return confirm('Are you want to delete?')" href="?delid=<?php echo $result['brandid'] ?>">Delete</a></td>
 						</tr>
 						
 						<?php

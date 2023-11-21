@@ -5,7 +5,7 @@
     </div>
     <div id="site_info">
         <p>
-         &copy; Copyright <a href="http://tourgroup5.com">Training group 5</a>. All Rights Reserved.
+         &copy; Copyright <a href="http://ElectronicsStoreGroup12.com">Training group 12</a>. All Rights Reserved.
         </p>
     </div>
 </body>

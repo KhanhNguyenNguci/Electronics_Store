@@ -32,7 +32,7 @@
         <?php
         $get_product_by_id = $pd->getproductbyId($id);
         if($get_product_by_id){
-            while($result_product = $get_product_by_id->fetch_assoc()){
+            while($result_product = pg_fetch_assoc($get_product_by_id)){
         ?>                 
         <form action="" method="post" enctype="multipart/form-data">
             <table class="form">
@@ -42,7 +42,7 @@
                         <label>Name</label>
                     </td>
                     <td>
-                        <input type="text" name="productName" value="<?php echo $result_product['productName']?>" class="medium" />
+                        <input type="text" name="productName" value="<?php echo $result_product['productname']?>" class="medium" />
                     </td>
                 </tr>
 				<tr>
@@ -56,15 +56,15 @@
                             $cat = new category();
                             $catlist = $cat->show_category();
                             if($catlist){
-                                while($result = $catlist->fetch_assoc()){
+                                while($result = pg_fetch_assoc($catlist)){
                             ?>
                             <option
                             <?php
-                            if($result['catId'] == $result_product['catId']){
+                            if($result['catid'] == $result_product['catid']){
                                 echo 'selected';
                             }
                             ?>
-                            value="<?php echo $result['catId']?>"> <?php echo $result['catName']?></option>
+                            value="<?php echo $result['catid']?>"> <?php echo $result['catname']?></option>
                             <?php
                                 }
                             }   
@@ -84,16 +84,16 @@
                             $brand = new brand();
                             $brandlist = $brand->show_brand();
                             if($brandlist){
-                                while($result = $brandlist->fetch_assoc()){
+                                while($result = pg_fetch_assoc($brandlist)){
                             ?>
 
                             <option 
                             <?php
-                            if($result['brandId'] ==$result_product['brandId']){
+                            if($result['brandid'] ==$result_product['brandid']){
                                 echo 'selected';
                             }
                             ?>
-                            value="<?php echo $result['brandId']?>"> <?php echo $result['brandName']?></option>
+                            value="<?php echo $result['brandid']?>"> <?php echo $result['brandname']?></option>
 
                             <?php
                                 }
