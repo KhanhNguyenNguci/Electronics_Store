@@ -14,12 +14,12 @@
         }
         public function insert_product($data, $files)
         {
-            $productName = mysqli_real_escape_string($this->db->link, $data['productName']); //connect DB
-            $category = mysqli_real_escape_string($this->db->link, $data['category']); //connect DB
-            $brand = mysqli_real_escape_string($this->db->link, $data['brand']); //connect DB
-            $product_desc = mysqli_real_escape_string($this->db->link, $data['product_desc']); //connect DB
-            $price = mysqli_real_escape_string($this->db->link, $data['price']); //connect DB
-            $type = mysqli_real_escape_string($this->db->link, $data['type']); //connect DB
+            $productName = pg_escape_string($this->db->link, $data['productName']); //connect DB
+            $category = pg_escape_string($this->db->link, $data['category']); //connect DB
+            $brand = pg_escape_string($this->db->link, $data['brand']); //connect DB
+            $product_desc = pg_escape_string($this->db->link, $data['product_desc']); //connect DB
+            $price = pg_escape_string($this->db->link, $data['price']); //connect DB
+            $type = pg_escape_string($this->db->link, $data['type']); //connect DB
             //kiem tra hinh anh va lay hinh anh cho vao folder uploads
             $permited = array('jpg','jpeg','png','gif');
             $file_name = $_FILES['image']['name'];
@@ -67,12 +67,12 @@
         }
         public function update_product($data, $files, $id){
 
-            $productName = mysqli_real_escape_string($this->db->link, $data['productName']); //connect DB
-            $category = mysqli_real_escape_string($this->db->link, $data['category']); //connect DB
-            $brand = mysqli_real_escape_string($this->db->link, $data['brand']); //connect DB
-            $product_desc = mysqli_real_escape_string($this->db->link, $data['product_desc']); //connect DB
-            $price = mysqli_real_escape_string($this->db->link, $data['price']); //connect DB
-            $type = mysqli_real_escape_string($this->db->link, $data['type']); //connect DB
+            $productName = pg_escape_string($this->db->link, $data['productName']); //connect DB
+            $category = pg_escape_string($this->db->link, $data['category']); //connect DB
+            $brand = pg_escape_string($this->db->link, $data['brand']); //connect DB
+            $product_desc = pg_escape_string($this->db->link, $data['product_desc']); //connect DB
+            $price = pg_escape_string($this->db->link, $data['price']); //connect DB
+            $type = pg_escape_string($this->db->link, $data['type']); //connect DB
             //kiem tra hinh anh va lay hinh anh cho vao folder uploads
             $permited = array('jpg','jpeg','png','gif');
             $file_name = $_FILES['image']['name'];
