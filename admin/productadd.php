@@ -20,101 +20,101 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) //submit mo
             if (isset($insertProduct)) {
                 echo $insertProduct; #thong bao
             }
-        ?>                  
-         <form action="productadd.php" method="post" enctype="multipart/form-data">
-            <table class="form">
-               
-                <tr>
-                    <td>
-                        <label>Name</label>
-                    </td>
-                    <td>
-                        <input type="text" name="productName" placeholder="Enter Product Name..." class="medium" />
-                    </td>
-                </tr>
-				<tr>
-                    <td>
-                        <label>Category</label>
-                    </td>
-                    <td>
-                        <select id="select" name="category">
-                            <option>------Select Category------</option>
-                            <?php
-                            $cat = new category();
-                            $catlist = $cat->show_category();
-                            if($catlist){
-                                while($result = pg_fetch_assoc($catlist)){
-                            ?>
-                            <option value="<?php echo $result['catid']?>"> <?php echo $result['catname']?></option>
-                            <?php
-                                }
-                            }   
-                            ?>
-                        </select>
-                    </td>
-                </tr>
-				<tr>
-                    <td>
-                        <label>Brand</label>
-                    </td>
-                    <td>
-                        <select id="select" name="brand">
-                            <option>-------Select Brand-------</option>
+            ?>
+            <form action="productadd.php" method="post" enctype="multipart/form-data">
+                <table class="form">
 
-                            <?php
-                            $brand = new brand();
-                            $brandlist = $brand->show_brand();
-                            if($brandlist){
-                                while($result = pg_fetch_assoc($brandlist)){
-                            ?>
-                            <option value="<?php echo $result['brandid']?>"> <?php echo $result['brandname']?></option>
-                            <?php
+                    <tr>
+                        <td>
+                            <label>Name</label>
+                        </td>
+                        <td>
+                            <input type="text" name="productName" placeholder="Enter Product Name..." class="medium" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>Category</label>
+                        </td>
+                        <td>
+                            <select id="select" name="category">
+                                <option>------Select Category------</option>
+                                <?php
+                                $cat = new category();
+                                $catlist = $cat->show_category();
+                                if ($catlist) {
+                                    while ($result = pg_fetch_assoc($catlist)) {
+                                ?>
+                                        <option value="<?php echo $result['catid'] ?>"> <?php echo $result['catname'] ?></option>
+                                <?php
+                                    }
                                 }
-                            }   
-                            ?>
-                            
-                        </select>
-                    </td>
-                </tr>
-				
-				 <tr>
-                    <td style="vertical-align: top; padding-top: 9px;">
-                        <label>Description</label>
-                    </td>
-                    <td>
-                        <textarea name="product_desc" class="tinymce"></textarea>
-                    </td>
-                </tr>
-				<tr>
-                    <td>
-                        <label>Price</label>
-                    </td>
-                    <td>
-                        <input type="text" name="price" placeholder="Enter Price..." class="medium" />
-                    </td>
-                </tr>
-            
-                <tr>
-                    <td>
-                        <label>Upload Image</label>
-                    </td>
-                    <td>
-                        <input type="file" name="image"/>
-                    </td>
-                </tr>
-				
-				<tr>
-                    <td>
-                        <label>Product Type</label>
-                    </td>
-                    <td>
-                        <select id="select" name="type">
-                            <option>Select Type</option>
-                            <option value="1">Featured</option>
-                            <option value="0">Non-Featured</option>
-                        </select>
-                    </td>
-                </tr>
+                                ?>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>Brand</label>
+                        </td>
+                        <td>
+                            <select id="select" name="brand">
+                                <option>-------Select Brand-------</option>
+
+                                <?php
+                                $brand = new brand();
+                                $brandlist = $brand->show_brand();
+                                if ($brandlist) {
+                                    while ($result = pg_fetch_assoc($brandlist)) {
+                                ?>
+                                        <option value="<?php echo $result['brandid'] ?>"> <?php echo $result['brandname'] ?></option>
+                                <?php
+                                    }
+                                }
+                                ?>
+
+                            </select>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="vertical-align: top; padding-top: 9px;">
+                            <label>Description</label>
+                        </td>
+                        <td>
+                            <textarea name="product_desc" class="tinymce"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>Price</label>
+                        </td>
+                        <td>
+                            <input type="text" name="price" placeholder="Enter Price..." class="medium" />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label>Upload Image</label>
+                        </td>
+                        <td>
+                            <input type="file" name="image" />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label>Product Type</label>
+                        </td>
+                        <td>
+                            <select id="select" name="type">
+                                <option>Select Type</option>
+                                <option value="1">Featured</option>
+                                <option value="0">Non-Featured</option>
+                            </select>
+                        </td>
+                    </tr>
 
                     <tr>
                         <td></td>
