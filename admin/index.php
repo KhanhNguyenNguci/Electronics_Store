@@ -11,10 +11,10 @@
                 <div class="block">               
                   <div class="col-md-3">
                     Từ ngày: <input class="form-control date_from" type="text" id="datepicker_from"></p>
+                    <input type="button" value="Lọc theo ngày" class="btn btn-success btn-locngay">
                   </div>
                   <div class="col-md-3">
-                    Tới ngày: <input class="form-control date_to" type="text" id="datepicker_to"></p>
-                    <input type="button" value="Lọc theo ngày" class="btn btn-success btn-locngay">     
+                    Tới ngày: <input class="form-control date_to" type="text" id="datepicker_to"></p>     
                   </div>
                   <div class="col-md-3">
                     Lọc theo: <span id="text-date"></span><br>
