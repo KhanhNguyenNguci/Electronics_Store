@@ -6,6 +6,7 @@
                     <ul class="submenu">
                         <li><a href="catadd.php">Thêm sản phẩm</a> </li>
                         <li><a href="catlist.php">Danh sách sản phẩm</a> </li>
+                        <li><a href="productcount.php">Thống kê số lượng sản phẩm</a> </li>
                     </ul>
                 </li>
                 <li><a class="menuitem">Thương hiệu sản phẩm</a>
