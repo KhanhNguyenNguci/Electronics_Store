@@ -36,11 +36,14 @@
                 //echo "Database connection established.<br>";
                 if($result != false)
                 {
+                    
                     $value = pg_fetch_assoc($result); //only return arr[char] # fetch_array: arr[char] or arr[number]
+                    
                     Session::set('adminlogin', true);
                     Session::set('adminId', $value['adminid']);
                     Session::set('adminUser', $value['adminuser']);
                     Session::set('adminName', $value['adminname']);
+
                     header('Location:index.php'); //true => back location
                 }
                 else
