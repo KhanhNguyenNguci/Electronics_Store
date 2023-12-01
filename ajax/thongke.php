@@ -47,9 +47,11 @@
                 'revenue' => $row['doanhthu'],
                 'quantity' => $row['soluong']
             );
+
         }
     }
 
     //print_r($chart_data);
-    echo $data = json_encode($chart_data); //dữ liệu dạng JSON
+    
+    echo json_encode($chart_data) ;  //dữ liệu dạng JSON
 ?>

@@ -6,7 +6,7 @@
 <?php include 'inc/header.php';?>
 <?php include 'inc/sidebar.php';?>
         <div class="grid_10">
-            <div class="box round first grid">
+            <div class="box round first grid" style="height: 500px">
                 <h2> Thống kê đơn hàng : <?php echo Carbon::yesterday('Asia/Ho_Chi_Minh');?> </h2>
                 <div class="block">               
                   <div class="col-md-3">
@@ -31,8 +31,13 @@
                   <div class="col-md-12">
                     <div id="myfisrtchart" style="height: 250px;"></div>
                   </div>
-
+                </div>
+                <div style="margin-left: 500px; background-color:red; width: 100px;">
+              
+                  todo
+              
                 </div>
             </div>
+            
         </div>
 <?php include 'inc/footer.php';?>
