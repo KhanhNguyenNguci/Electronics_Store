@@ -6,7 +6,7 @@
 <?php include 'inc/header.php';?>
 <?php include 'inc/sidebar.php';?>
         <div class="grid_10">
-            <div class="box round first grid">
+            <div class="box round first grid" style="height: 500px">
                 <h2> Thống kê đơn hàng : <?php echo Carbon::yesterday('Asia/Ho_Chi_Minh');?> </h2>
                 <div class="block">               
                   <div class="col-md-3">

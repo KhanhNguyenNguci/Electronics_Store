@@ -1,7 +1,6 @@
 <?php
     $filepath = realpath(dirname(__FILE__));
     include_once($filepath.'/../lib/database.php');
-    //include_once($filepath.'/../helpers/format.php');
     require_once('../carbon/autoload.php'); //sửa dụng carbon lấy ra thứ ngày tháng
     use Carbon\Carbon;
     use Carbon\CarbonInterval;
