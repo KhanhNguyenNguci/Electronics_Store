@@ -6,7 +6,6 @@
                     <ul class="submenu">
                         <li><a href="catadd.php">Thêm sản phẩm</a> </li>
                         <li><a href="catlist.php">Danh sách sản phẩm</a> </li>
-                        <li><a href="productcount.php">Thống kê số lượng sản phẩm</a> </li>
                     </ul>
                 </li>
                 <li><a class="menuitem">Thương hiệu sản phẩm</a>
@@ -19,29 +18,10 @@
                     <ul class="submenu">
                         <li><a href="productadd.php">Thêm sản phẩm</a> </li>
                         <li><a href="productlist.php">Danh sách sản phẩm</a> </li>
+                        <li><a href="productcount.php">Số lượng sản phẩm theo loại</a> </li>
                     </ul>
                 </li>
-                <li><a class="menuitem">Site Option</a>
-                    <ul class="submenu">
-                        <li><a href="titleslogan.php">Title & Slogan</a></li>
-                        <li><a href="social.php">Social Media</a></li>
-                        <li><a href="copyright.php">Copyright</a></li>
-                        
-                    </ul>
-                </li>
-				
-                 <li><a class="menuitem">Update Pages</a>
-                    <ul class="submenu">
-                        <li><a>About Us</a></li>
-                        <li><a>Contact Us</a></li>
-                    </ul>
-                </li>
-				<li><a class="menuitem">Slider Option</a>
-                    <ul class="submenu">
-                        <li><a href="addslider.php">Add Slider</a> </li>
-                        <li><a href="sliderlist.php">Slider List</a> </li>
-                    </ul>
-                </li>
+                
                 
             </ul>
         </div>
