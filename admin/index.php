@@ -32,11 +32,6 @@
                     <div id="myfisrtchart" style="height: 250px;"></div>
                   </div>
                 </div>
-                <div style="margin-left: 500px; background-color:red; width: 100px;">
-              
-                  todo
-              
-                </div>
             </div>
             
         </div>

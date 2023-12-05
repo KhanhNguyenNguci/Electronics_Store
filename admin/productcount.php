@@ -54,7 +54,7 @@
                     echo "<tr style='background-color: #dcdcdc'>";
                 }
                 echo "<td style='border: 1px solid black; text-align: left;
-                    padding: 8px;'>Tổng</td>";
+                    padding: 8px;'><b>Tổng</b></td>";
                 echo "<td style='border: 1px solid black; text-align: center;
                     padding: 8px;'>" . $sumProduct . "</td>";
                 echo "<tr>";
